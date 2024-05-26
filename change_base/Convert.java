@@ -148,7 +148,9 @@ public class Convert {
 
     private static String invertBits(String binary) {
         StringBuilder inverted = new StringBuilder();
-        for (char bit : binary.toCharArray()) {
+        char[] bits = binary.toCharArray();
+        for (int i = 0; i < bits.length; i++) {
+            char bit = bits[i];
             inverted.append(bit == '0' ? '1' : '0');
         }
         return inverted.toString();
@@ -157,11 +159,13 @@ public class Convert {
     private static String addBinary(String binary1, String binary2) {
         StringBuilder result = new StringBuilder();
         int carry = 0;
-        int maxLength = Math.max(binary1.length(), binary2.length());
+        // Initialize index for binary1 and binary2
+        int index1 = binary1.length() - 1;
+        int index2 = binary2.length() - 1;
 
-        for (int i = 0; i < maxLength; i++) {
-            int bit1 = i < binary1.length() ? binary1.charAt(binary1.length() - 1 - i) - '0' : 0;
-            int bit2 = i < binary2.length() ? binary2.charAt(binary2.length() - 1 - i) - '0' : 0;
+        for (int i = 0; i < binary1.length(); i++) {
+            int bit1 = index1 >= 0 ? binary1.charAt(index1--) - '0' : 0;
+            int bit2 = index2 >= 0 ? binary2.charAt(index2--) - '0' : 0;
             int sum = bit1 + bit2 + carry;
             result.insert(0, sum % 2);
             carry = sum / 2;

@@ -7,6 +7,7 @@ package binsearch;
 
 import java.util.*;
 
+
 /**
  *
  * @author hoang.dat

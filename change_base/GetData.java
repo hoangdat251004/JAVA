@@ -150,7 +150,7 @@ public class GetData {
 
     private static boolean checkDecNumber(String decimalNum) {
         //Use Regex to check String contains 0 to 9
-        Pattern pattern = Pattern.compile("^[0-9]+$");
+        Pattern pattern = Pattern.compile("^-?[0-9]+$");
         Matcher matcher = pattern.matcher(decimalNum);
         return matcher.matches();
     }

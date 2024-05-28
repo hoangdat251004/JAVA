@@ -12,7 +12,7 @@ import java.util.ResourceBundle;
  *
  * @author Admin
  */
-public class EbankController {
+public class EbankManager {
 
     static GetData gd = new GetData();
     static Display dp = new Display();

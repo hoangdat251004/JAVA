@@ -1,7 +1,6 @@
 package controller;
 
-import controller.EbankController;
-import controller.EbankController;
+import controller.EbankManager;
 
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
@@ -19,7 +18,7 @@ public class Ebank {
             int choice = GetData.getInt();
             switch (choice) {
                 case 1: case 2:
-                    EbankController.inputInformation(choice);
+                    EbankManager.inputInformation(choice);
                     break;
                 case 3:
                     System.exit(0);
